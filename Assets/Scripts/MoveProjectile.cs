@@ -20,12 +20,8 @@ public class MoveProjectile : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-
-        Debug.Log("OnTrigger");
-        Debug.Log(other.gameObject.name);
         if (other.gameObject.tag == "Enemy")
         {
-            Debug.Log("TagEnemy");
             Hit(other);
         }
     }
@@ -34,6 +30,5 @@ public class MoveProjectile : MonoBehaviour
         EnemyManager enemyHitted = other.gameObject.GetComponent<EnemyManager>();
         enemyHitted.TakeDamage();
         Destroy(gameObject);
-        Debug.Log("DestroyGO");
     }
 }

@@ -34,12 +34,10 @@ public class EnemyManager : MonoBehaviour
 
     IEnumerator ChangeColorOnHit()
     {
-        Debug.Log("ChangeColor");
         foreach (SkinnedMeshRenderer mesh in _meshRenderers)
         {
 
             mesh.material = _hittedMaterial;
-            Debug.Log(mesh.name + " material: " + mesh.material.name);
         }
 
         yield return new WaitForSeconds(0.08f);
@@ -47,7 +45,6 @@ public class EnemyManager : MonoBehaviour
         foreach (SkinnedMeshRenderer mesh in _meshRenderers)
         {
             mesh.material = _material;
-            Debug.Log(mesh.name + " material: " + mesh.material.name);
         }
     }
 
